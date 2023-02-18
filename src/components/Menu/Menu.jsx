@@ -1,9 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
-	AppstoreOutlined,
-	MailOutlined,
-	SettingOutlined,
+	DatabaseOutlined,
+	HomeOutlined,
+	FolderOpenOutlined,
+	UserOutlined,
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useState } from "react";
@@ -11,28 +11,28 @@ const items = [
 	{
 		label: <Link to="/">Home</Link>,
 		key: "home",
-		icon: <MailOutlined />,
+		icon: <HomeOutlined />,
 	},
 	{
 		label: <Link to="/skills">My Skills</Link>,
 		key: "skills",
-		icon: <AppstoreOutlined />,
+		icon: <DatabaseOutlined />,
 	},
 	{
 		label: <Link to="/projects">My Projects</Link>,
 		key: "projects",
-		icon: <SettingOutlined />,
+		icon: <FolderOpenOutlined />,
 	},
 	{
-		label: <Link to="/about">About Me</Link>,
+		label: <Link to="/contact">Contact</Link>,
 		key: "about",
+		icon: <UserOutlined />,
 	},
 ];
 
 const MyMenu = () => {
-	const [current, setCurrent] = useState("home");
+	const [current, setCurrent] = useState("");
 	const onClick = (e) => {
-		console.log("click ", e);
 		setCurrent(e.key);
 	};
 	return (
